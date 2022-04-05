@@ -55,21 +55,38 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 // var button = document.getElementById('mute');
 //     button.onclick = function (){
-	document.querySelector("#mute").addEventListener("click", function() {
-    if (video.muted == false) {
-           video.muted = true;
-		   console.log("Mute");
-		   document.querySelector("#mute").innerHTML = "Mute"
-		   document.querySelector('#volume').innerHTML = 0;
-    }
 
-    else {
-        video.muted = false;
-		console.log("Unmute");
-		document.querySelector("#mute").innerHTML = "Unmute"
-		document.querySelector('#volume').innerHTML = video.volume * 100 + '%';
-    }
-    });
+
+
+	// document.querySelector("#mute").addEventListener("click", function() {
+    // if (video.muted == false) {
+    //        video.muted = true;
+	// 	   console.log("Mute");
+	// 	   document.querySelector("#mute").innerHTML = "Mute"
+	// 	   document.querySelector('#volume').innerHTML = 0;
+    // }
+
+    // else {
+    //     video.muted = false;
+	// 	console.log("Unmute");
+	// 	document.querySelector("#mute").innerHTML = "Unmute"
+	// 	document.querySelector('#volume').innerHTML = video.volume * 100 + '%';
+    // }
+    // });
+
+
+	document.querySelector('#mute').addEventListener('click', function() {
+		if (video.muted === false) {
+			video.muted = true;
+			console.log(video.volume);
+			document.querySelector('#mute').innerHTML = 'Unmute';
+			document.querySelector('#volume').innerHTML = 0;
+		} else {
+			video.muted = false;
+			document.querySelector('#mute').innerHTML = 'Mute';
+			document.querySelector('#volume').innerHTML = video.volume * 100 + '%';
+		}
+	});
 
 // VOLUME SLIDER this. (REFER)
 
